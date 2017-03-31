@@ -1,0 +1,9 @@
+serverName = 193.50.230.230
+serverPort = 443
+clientSocket = socket(AF_INET, SOCK_STREAM)
+clientSocket.connect((serverName,serverPort))
+message = "GET / HTTP/1.1 \n\n"
+clientSocket.send(message)
+answer = clientSocket.recv(1024)
+print "From Server:", answer
+clientSocket.close()
